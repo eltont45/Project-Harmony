@@ -1,11 +1,3 @@
-using tailwind for css 
-
-module.exports = {
-    theme: {
-        extend: {
-            backgroundImage: {
-                'bgImage': "url('../Project-Harmony/assets/images/bg-image.jpg')",
-            }
-        }
-    }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

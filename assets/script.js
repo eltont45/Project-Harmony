@@ -28,6 +28,11 @@ function getArtistHeroImageAndBio() {
         .then(response => response.text())
         .then(result => {
             actualResult = JSON.parse(result);
+            if (actualResult.artists && actualResult.artists[0].strArtistFanart) {
+            selectors.bgImage.remove();
+            selectors.searchField.remove();
+            selectors.searchButton.remove();
+            selectors.searchArtistSection.remove();
             var artistImage = actualResult.artists[0].strArtistFanart;
             var artistName = actualResult.artists[0].strArtist;
             var heroSection = document.querySelector('.hero-section');
@@ -52,14 +57,11 @@ function getArtistHeroImageAndBio() {
             bioContent.className = "text-gray-500 px-4 font-light";
             bioContent.textContent = actualResult.artists[0].strBiographyEN;
             bioSection.appendChild(bioContent);
+            }
         })
         .catch(error => console.log('error', error));
 }
 
 selectors.searchButton.addEventListener("click", function () {
-    selectors.bgImage.remove();
-    selectors.searchField.remove();
-    selectors.searchButton.remove();
-    selectors.searchArtistSection.remove();
     getArtistHeroImageAndBio();
 });

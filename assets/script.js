@@ -12,7 +12,7 @@ function loadArtist() {
     window.location.href = "./artist.html";
 }
 
-function getArtistHeroImage() {
+function getArtistHeroImageAndBio() {
     var searchKey = selectors.searchField.value;
     var myHeaders = new Headers();
     myHeaders.append("x-rapidapi-host", "theaudiodb.p.rapidapi.com");
@@ -43,6 +43,15 @@ function getArtistHeroImage() {
             heroTextContent.className = "text-4xl font-bold mb-2 text-white";
             heroTextContent.textContent = artistName;
             heroTextContainer.appendChild(heroTextContent);
+            var bioSection = document.createElement("div");
+            bioSection.className = "font-semibold text-lg pb-5";
+            bioSection.textContent = artistName;
+            bioSection.style.backgroundColor = "aliceblue";
+            heroSection.appendChild(bioSection);
+            var bioContent = document.createElement("p");
+            bioContent.className = "text-gray-500 px-4 font-light";
+            bioContent.textContent = actualResult.artists[0].strBiographyEN;
+            bioSection.appendChild(bioContent);
         })
         .catch(error => console.log('error', error));
 }
@@ -52,5 +61,5 @@ selectors.searchButton.addEventListener("click", function () {
     selectors.searchField.remove();
     selectors.searchButton.remove();
     selectors.searchArtistSection.remove();
-    getArtistHeroImage();
+    getArtistHeroImageAndBio();
 });

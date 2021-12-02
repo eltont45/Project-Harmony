@@ -33,7 +33,7 @@ function getArtistHeroImage() {
             var heroSection = document.querySelector('.hero-section');
             var heroDiv = document.createElement("div");
             heroDiv.className = "py-20";
-            heroDiv.style.height = "500px";
+            heroDiv.style.height = "400px";
             heroDiv.style.backgroundImage="url("+artistImage+")";
             heroSection.appendChild(heroDiv);
             var heroTextContainer = document.createElement("div");

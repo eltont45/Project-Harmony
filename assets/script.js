@@ -16,8 +16,6 @@ var selectors = {
     searchArtistSection: document.querySelector('.search-artist-section')
 };
 
-
-
 function loadArtist() {
     window.location.href = "./artist.html";
 }
@@ -97,6 +95,7 @@ function save() {
     //save new favorites and old favorites to local storage
     localStorage.setItem('favorite', JSON.stringify(oldFavorites));
 };
+
 //I didn't get to finish the button yet
 function viewFavorites(){
     //if there is artists saved then continue

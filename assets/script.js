@@ -58,7 +58,7 @@ function getArtistHeroImageAndBio() {
             bioContent.textContent = actualResult.artists[0].strBiographyEN;
             bioSection.appendChild(bioContent);
             } else {
-                window.alert("Please try a different artist");
+                window.alert("Sorry, please try a different artist");
             }
         })
         .catch(error => console.log('error', error));

@@ -12,7 +12,7 @@ function loadArtist() {
     window.location.href = "./artist.html";
 }
 
-function getArtistHeroImage() {
+function getArtistHeroImageAndBio() {
     var searchKey = selectors.searchField.value;
     var myHeaders = new Headers();
     myHeaders.append("x-rapidapi-host", "theaudiodb.p.rapidapi.com");
@@ -28,6 +28,11 @@ function getArtistHeroImage() {
         .then(response => response.text())
         .then(result => {
             actualResult = JSON.parse(result);
+            if (actualResult.artists && actualResult.artists[0].strArtistFanart) {
+            selectors.bgImage.remove();
+            selectors.searchField.remove();
+            selectors.searchButton.remove();
+            selectors.searchArtistSection.remove();
             var artistImage = actualResult.artists[0].strArtistFanart;
             var artistName = actualResult.artists[0].strArtist;
             var heroSection = document.querySelector('.hero-section');
@@ -43,14 +48,22 @@ function getArtistHeroImage() {
             heroTextContent.className = "text-4xl font-bold mb-2 text-white";
             heroTextContent.textContent = artistName;
             heroTextContainer.appendChild(heroTextContent);
+            var bioSection = document.createElement("div");
+            bioSection.className = "font-semibold text-lg pb-5";
+            bioSection.textContent = artistName;
+            bioSection.style.backgroundColor = "aliceblue";
+            heroSection.appendChild(bioSection);
+            var bioContent = document.createElement("p");
+            bioContent.className = "text-gray-500 px-4 font-light";
+            bioContent.textContent = actualResult.artists[0].strBiographyEN;
+            bioSection.appendChild(bioContent);
+            } else {
+                window.alert("Sorry, please try a different artist");
+            }
         })
         .catch(error => console.log('error', error));
 }
 
 selectors.searchButton.addEventListener("click", function () {
-    selectors.bgImage.remove();
-    selectors.searchField.remove();
-    selectors.searchButton.remove();
-    selectors.searchArtistSection.remove();
-    getArtistHeroImage();
+    getArtistHeroImageAndBio();
 });

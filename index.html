@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
-    <link href="/Project-Harmony/assets/tailwind.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3f0e51d1ec.js" crossorigin="anonymous"></script>
@@ -20,58 +21,122 @@
 <body class="font-sans-serif">
     <header>
         <!-- Navbar goes here  -->
-        <nav class= "bg-white flex-wrap">
-            <div class= "max-w-6xl mx auto pr-3">
-                <div class= "flex justify-between space-x-4">
+        <nav class="bg-white flex-wrap">
+            <div class="max-w-6xl mx auto pr-3">
+                <div class="flex justify-between space-x-4">
 
-                <!-- logo -->
-                <div class= "flex">
-                    <img src="./assets/Images/facebook_cover_photo_2.png" alt="record for Project Harmony">
+                    <!-- logo -->
+                    <div class="flex">
+                        <img src="./assets/Images/facebook_cover_photo_2.png" alt="record for Project Harmony">
+                    </div>
+
+                    <!-- primary nav -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="/Project-Harmony/index.html" class="py-2 px-3 cursor-pointer">Home</a>
+                        <a href="/Project-Harmony/about.html" class="py-2 px-3 cursor-pointer">About</a>
+                    </div>
+
+                    <!-- mobile button goes here -->
+                    <div class="md:hidden flex items-center">
+                        <button class="mobile-menu-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-pink-600" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- mobile menu -->
+                    <div class="mobile-menu hidden text-sans-serif ">
+                        <a href="/Project-Harmony/index.html"
+                            class="flow-root py-2 px-2 text-sm cursor-pointer">Home</a>
+                        <a href="/Project-Harmony/about.html"
+                            class="flow-root py-2 px-2 text-sm cursor-pointer">About</a>
+                    </div>
+
                 </div>
-
-                <!-- primary nav -->
-                <div class= "hidden md:flex items-center space-x-1">
-                    <a href="/Project-Harmony/index.html" class="py-2 px-3 cursor-pointer">Home</a>
-                    <a href="/Project-Harmony/about.html" class="py-2 px-3 cursor-pointer">About</a>
-                </div>
-
-                <!-- mobile button goes here -->
-                <div class="md:hidden flex items-center">
-                    <button class= "mobile-menu-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-pink-600" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
-                      </svg>
-                    </button>
-                </div>
-
-                <!-- mobile menu -->
-                <div class="mobile-menu hidden text-sans-serif ">
-                    <a href="/Project-Harmony/index.html" class="flow-root py-2 px-2 text-sm cursor-pointer">Home</a>
-                    <a href="/Project-Harmony/about.html" class="flow-root py-2 px-2 text-sm cursor-pointer">About</a>
-                </div>
-
-             </div>
             </div>
 
         </nav>
-    </header> 
+    </header>
 
-    <div 
-    class="container h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8 bg-bottom opacity-75"
-    style="background-image: url('https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
-    <div class="relative"> <input type="text" class="h-14 w-96 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none" placeholder="Search an artist">
-        <div class="absolute top-4 right-3"> <i class="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i> </div>
+    <div class="hero-section">
+        <div class="container h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8 bg-bottom opacity-75 bg-image" 
+        style="background-image: url('https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=1000');">
+                <div class="flex relative search-artist-section justify-end"> <input type="text" class="h-14 w-96 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none search-artist" placeholder="Search an artist">
+                    <div class="flex absolute top-0 right-3 justify-end py-1 px-2 search-btn"> <i class="fa fa-search text-black-400 z-20 hover:text-gray-500 search-btn"></i> </div>
+                </div>
+            </div>
+        
+     </div>
+    <div class="live-events-section">
+        <h2>Live Events</h2>
+        <script>
+            //live events section for artist
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+            fetch("https://api.seatgeek.com/2/events/801255?client_id=MjQ3NzE1NjR8MTYzODU5MTQwNi4zMjUwMjEz&client_secret=8cb245e03974ec5bd0decce0cffdb1472777f71f3850b610bdeb273ac29531d6",
+                    requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    actualResult = JSON.parse(result);
+                    if (actualResult.artists && actualResult.artists[0]) {
+                        var artist = actualResult.artists[0].strArtist;
+                    }
+                    console.log(actualResult.type);
+                    var selectors = {
+                        liveEventsSection: document.querySelector('.live-events-section'),
+                    };
+                    var liveEventsContainer = document.createElement("div");
+                    liveEventsContainer.className = "p-10";
+                    liveEventsContainer.style.backgroundColor = "aliceblue";
+                    selectors.liveEventsSection.append(liveEventsContainer);
+                    var liveCard = document.createElement("div");
+                    liveCard.className = " w-full lg:max-w-full lg:flex";
+                    liveEventsContainer.appendChild(liveCard);
+                    var liveImageSection = document.createElement("div");
+                    liveImageSection.className =
+                        "h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden";
+                    liveImageSection.style.backgroundImage = "url('./assets/images/events.jpg')";
+                    liveCard.appendChild(liveImageSection);
+                    var eventsTextContent = document.createElement("div");
+                    eventsTextContent.className =
+                        "border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal";
+                    liveCard.appendChild(eventsTextContent);
+                    var eventsContentContainer = document.createElement("div");
+                    eventsContentContainer.className = "mb-8";
+                    eventsTextContent.appendChild(eventsContentContainer);
+                    var eventsContentHeader = document.createElement("div");
+                    eventsContentHeader.className = "text-gray-900 font-bold text-xl mb-2";
+                    eventsContentContainer.appendChild(eventsContentHeader);
+
+                })
+                .catch(error => console.log('error', error));
+        </script>
+
     </div>
-</div>
-</div>
-    
+    </div>
+    <div><button class="favorite-artist-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+        </button></div>
+
     <div class="footer text-sans-serif flex flex-1 gap-12 uppercase text-xs">
-        <h2><footer> with ❤️️ by EDT</footer></h2>
+        <h2>
+            <footer> with ❤️️ by EDT</footer>
+        </h2>
         <p>
             &copy; 2021 Project Harmony
         </p>
     </div>
-    <iframe src="./assets/artist.html"  frameborder="5"></iframe>
-   <script src="./assets/script.js"></script>
+    <!-- <iframe src="./assets/artist.html"  frameborder="5"></iframe> -->
+    <!-- <script src="./assets/script.js"></script> -->
 </body>
+
 </html>

@@ -15,8 +15,72 @@ var selectors = {
     bgImage: document.querySelector('.bg-image'),
     searchArtistSection: document.querySelector('.search-artist-section'),
     heroSection: document.querySelector('.hero-section'),
-    discographySection: document.querySelector('.discography-section')
+    discographySection: document.querySelector('.discography-section'),
+    card1header: document.querySelector('.card-1-header'),
+    card1p1: document.querySelector('.card1-p1'),
+    card1p2: document.querySelector('.card1-p2'),
+    card1p3: document.querySelector('.card1-p3'),
+    card1p4: document.querySelector('.card1-p4'),
+    card1btn: document.querySelector('.card-1-button'),
+    card2header: document.querySelector('.card-2-header'),
+    card2p1: document.querySelector('.card2-p1'),
+    card2p2: document.querySelector('.card2-p2'),
+    card2p3: document.querySelector('.card2-p3'),
+    card2p4: document.querySelector('.card2-p4'),
+    card2btn: document.querySelector('.card-2-button'),
+    card3header: document.querySelector('.card-3-header'),
+    card3p1: document.querySelector('.card3-p1'),
+    card3p2: document.querySelector('.card3-p2'),
+    card3p3: document.querySelector('.card3-p3'),
+    card3p4: document.querySelector('.card3-p4'),
+    card3btn: document.querySelector('.card-3-button')
 };
+
+function liveEvents() {
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    fetch("https://api.seatgeek.com/2/events?client_id=MjQ3NzE1NjR8MTYzODU5MTQwNi4zMjUwMjEz&client_secret=8cb245e03974ec5bd0decce0cffdb1472777f71f3850b610bdeb273ac29531d6&type=concert&venue.state=CA", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+            actualResult = JSON.parse(result);
+            var concert1Date = new Date(actualResult.events[0].datetime_utc);
+            var pstTime1 = concert1Date.toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
+            selectors.card1header.textContent = actualResult.events[0].venue.name;
+            selectors.card1p1.textContent = "Type: "+actualResult.events[0].type;
+            selectors.card1p2.textContent = "Genre: "+actualResult.events[0].performers[0].genres[0].name;
+            selectors.card1p3.textContent = "Date: "+pstTime1;
+            selectors.card1p4.textContent = "Venue: "+actualResult.events[0].venue.address+", "+actualResult.events[0].venue.city+", "+actualResult.events[0].venue.state+" "+actualResult.events[0].venue.postal_code;
+            selectors.card1btn.addEventListener('click',function () {
+               window.open(actualResult.events[0].venue.url,'_blank').focus();
+            })
+            var concert2Date = new Date(actualResult.events[1].datetime_utc);
+            var pstTime2 = concert2Date.toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
+            selectors.card2header.textContent = actualResult.events[1].venue.name;
+            selectors.card2p1.textContent = "Type: "+actualResult.events[1].type;
+            selectors.card2p2.textContent = "Genre: "+actualResult.events[1].performers[0].genres[0].name;
+            selectors.card2p3.textContent = "Date: "+pstTime2;
+            selectors.card2p4.textContent = "Venue: "+actualResult.events[1].venue.address+", "+actualResult.events[1].venue.city+", "+actualResult.events[1].venue.state+" "+actualResult.events[1].venue.postal_code;
+            selectors.card2btn.addEventListener('click',function () {
+               window.open(actualResult.events[1].venue.url,'_blank').focus();
+            })
+            var concert3Date = new Date(actualResult.events[2].datetime_utc);
+            var pstTime3 = concert3Date.toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
+            selectors.card3header.textContent = actualResult.events[2].venue.name;
+            selectors.card3p1.textContent = "Type: "+actualResult.events[2].type;
+            selectors.card3p2.textContent = "Genre: "+actualResult.events[2].performers[0].genres[0].name;
+            selectors.card3p3.textContent = "Date: "+pstTime3;
+            selectors.card3p4.textContent = "Venue: "+actualResult.events[2].venue.address+", "+actualResult.events[2].venue.city+", "+actualResult.events[2].venue.state+" "+actualResult.events[2].venue.postal_code;
+            selectors.card3btn.addEventListener('click',function () {
+               window.open(actualResult.events[2].venue.url,'_blank').focus();
+            })
+        })
+        .catch(error => console.log('error', error));
+
+}
+liveEvents();
 
 function loadArtist() {
     window.location.href = "./artist.html";
@@ -39,6 +103,7 @@ function getArtistHeroImageAndBio() {
         .then(result => {
             actualResult = JSON.parse(result);
             if (actualResult.artists && actualResult.artists[0].strArtistFanart) {
+                // selectors.heroSection.style.backgroundImage = "none";
                 selectors.bgImage.remove();
                 selectors.searchField.remove();
                 selectors.searchButton.remove();
@@ -49,7 +114,7 @@ function getArtistHeroImageAndBio() {
                 var heroDiv = document.createElement("div");
                 heroDiv.className = "py-20";
                 heroDiv.style.height = "400px";
-                heroDiv.style.backgroundImage = "url(" + artistImage + ")";
+                selectors.heroSection.style.backgroundImage = "url(" + artistImage + ")";
                 heroSection.appendChild(heroDiv);
                 var heroTextContainer = document.createElement("div");
                 heroTextContainer.className = "container mx-auto px-6";
@@ -73,6 +138,7 @@ function getArtistHeroImageAndBio() {
         })
         .catch(error => console.log('error', error));
 }
+
 function getDiscography() {
     var searchKey = selectors.searchField.value;
     var myHeaders = new Headers();
@@ -91,7 +157,7 @@ function getDiscography() {
             actualResult = JSON.parse(result);
             var discographyContainer = document.createElement("div");
             discographyContainer.className = "p-10";
-            discographyContainer.style.backgroundColor = "aliceblue"; 
+            discographyContainer.style.backgroundColor = "aliceblue";
             selectors.discographySection.append(discographyContainer);
             var discoCard = document.createElement("div");
             discoCard.className = " w-full lg:max-w-full lg:flex";
@@ -109,7 +175,7 @@ function getDiscography() {
             var discoContentHeader = document.createElement("div");
             discoContentHeader.className = "text-gray-900 font-bold text-xl mb-2";
             searchKeyUpperCase = searchKey.toUpperCase();
-            discoContentHeader.textContent =  searchKeyUpperCase + " Albums Discography";
+            discoContentHeader.textContent = searchKeyUpperCase + " Albums Discography";
             discoContentContainer.appendChild(discoContentHeader);
             if (actualResult.album) {
                 var discoList = document.createElement("ul");

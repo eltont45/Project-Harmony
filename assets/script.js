@@ -50,7 +50,9 @@ function liveEvents() {
             var pstTime1 = concert1Date.toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
             selectors.card1header.textContent = actualResult.events[0].venue.name;
             selectors.card1p1.textContent = "Type: "+actualResult.events[0].type;
+            if (actualResult.events[0].performers[0].genres){
             selectors.card1p2.textContent = "Genre: "+actualResult.events[0].performers[0].genres[0].name;
+            }
             selectors.card1p3.textContent = "Date: "+pstTime1;
             selectors.card1p4.textContent = "Venue: "+actualResult.events[0].venue.address+", "+actualResult.events[0].venue.city+", "+actualResult.events[0].venue.state+" "+actualResult.events[0].venue.postal_code;
             selectors.card1btn.addEventListener('click',function () {
@@ -60,7 +62,9 @@ function liveEvents() {
             var pstTime2 = concert2Date.toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
             selectors.card2header.textContent = actualResult.events[1].venue.name;
             selectors.card2p1.textContent = "Type: "+actualResult.events[1].type;
+            if (actualResult.events[1].performers[0].genres){
             selectors.card2p2.textContent = "Genre: "+actualResult.events[1].performers[0].genres[0].name;
+            }
             selectors.card2p3.textContent = "Date: "+pstTime2;
             selectors.card2p4.textContent = "Venue: "+actualResult.events[1].venue.address+", "+actualResult.events[1].venue.city+", "+actualResult.events[1].venue.state+" "+actualResult.events[1].venue.postal_code;
             selectors.card2btn.addEventListener('click',function () {
@@ -70,7 +74,9 @@ function liveEvents() {
             var pstTime3 = concert3Date.toLocaleString("en-US", {timeZone: "America/Los_Angeles"})
             selectors.card3header.textContent = actualResult.events[2].venue.name;
             selectors.card3p1.textContent = "Type: "+actualResult.events[2].type;
+            if (actualResult.events[2].performers[0].genres){
             selectors.card3p2.textContent = "Genre: "+actualResult.events[2].performers[0].genres[0].name;
+            }
             selectors.card3p3.textContent = "Date: "+pstTime3;
             selectors.card3p4.textContent = "Venue: "+actualResult.events[2].venue.address+", "+actualResult.events[2].venue.city+", "+actualResult.events[2].venue.state+" "+actualResult.events[2].venue.postal_code;
             selectors.card3btn.addEventListener('click',function () {

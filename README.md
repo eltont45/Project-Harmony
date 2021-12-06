@@ -21,13 +21,13 @@ https://eltont45.github.io/Project-Harmony/
 ![Live Section](https://github.com/eltont45/Project-Harmony/blob/develop/assets/Images/readme-live-events-section.png?raw=true "Live Section")
 
 * Search artists by name
-![Search Artists by Name](./assets/images/readme-search-artists.png?raw=true "Search Artists by Name")
+![Search Artists by Name](https://github.com/eltont45/Project-Harmony/blob/develop/assets/Images/readme-search-artists.png?raw=true "Search Artists by Name")
 
 * Artists search results includes a hero image, bio and discography
-![Artists Hero and Bio](./assets/images/readme-artist-hero-and-bio.png?raw=true "Artists Hero and Bio")
-![Artists Discography](./assets/images/readme-artist-discography.png?raw=true "Artists Discography")
+![Artists Hero and Bio](https://github.com/eltont45/Project-Harmony/blob/develop/assets/Images/readme-artist-hero-and-bio.png?raw=true "Artists Hero and Bio")
+![Artists Discography](https://github.com/eltont45/Project-Harmony/blob/develop/assets/Images/readme-artist-discography.png?raw=true "Artists Discography")
 
 * About link in the navigation menu takes the user to the about html page, home link routes to the landing page
-![About Section](./assets/images/readme-about-page.png?raw=true "About Section")
+![About Section](https://github.com/eltont45/Project-Harmony/blob/develop/assets/Images/readme-about-page.png?raw=true "About Section")
 
 

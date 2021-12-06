@@ -18,16 +18,16 @@ https://eltont45.github.io/Project-Harmony/
 
 ## Application Walk-through 
 * Live Events are displayed in the landing page. Tickets can be booked for the events by clicking on the "Buy Tickets" button.
-![Alt text](assets/images/readme-live-events-section.png?raw=true "Live Section")
+![Live Section](./assets/images/readme-live-events-section.png?raw=true "Live Section")
 
 * Search artists by name
-![Alt text](./assets/images/readme-search-artists.png?raw=true "Search Artists by Name")
+![Search Artists by Name](./assets/images/readme-search-artists.png?raw=true "Search Artists by Name")
 
 * Artists search results includes a hero image, bio and discography
-![Alt text](./assets/images/readme-artist-hero-and-bio.png?raw=true "Artists Hero and Bio")
-![Alt text](./assets/images/readme-artist-discography.png?raw=true "Artists Discography")
+![Artists Hero and Bio](./assets/images/readme-artist-hero-and-bio.png?raw=true "Artists Hero and Bio")
+![Artists Discography](./assets/images/readme-artist-discography.png?raw=true "Artists Discography")
 
 * About link in the navigation menu takes the user to the about html page, home link routes to the landing page
-![Alt text](./assets/images/readme-about-page.png?raw=true "About Section")
+![About Section](./assets/images/readme-about-page.png?raw=true "About Section")
 
 

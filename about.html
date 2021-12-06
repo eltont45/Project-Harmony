@@ -19,50 +19,57 @@
 
 <body class="font-sans-serif">
     <header>
-         <!-- Navbar goes here  -->
-        <nav class= "bg-white flex-wrap">
-            <div class= "max-w-6xl mx auto pr-3">
-                <div class= "flex justify-between space-x-4">
+        <!-- Navbar goes here  -->
+        <nav class="bg-white flex-wrap">
+            <div class="max-w-6xl mx auto pr-3">
+                <div class="flex justify-between space-x-4">
 
-                <!-- logo -->
-                <div class= "flex">
-                    <img src="./assets/Images/facebook_cover_photo_3.png" alt="record for Project Harmony">
+                    <!-- logo -->
+                    <div class="flex pl-6">
+                        <img src="./assets/Images/facebook_cover_photo_3.png" alt="record for Project Harmony">
+                    </div>
+
+                    <!-- primary nav -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="./index.html" class="py-2 px-3 cursor-pointer">Home</a>
+                        <a href="./about.html" class="py-2 px-3 cursor-pointer">About</a>
+                    </div>
+
+                    <!-- mobile button goes here -->
+                    <div class="md:hidden flex items-center">
+                        <button class="mobile-menu-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-pink-600" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- mobile menu -->
+                    <div class="mobile-menu hidden text-sans-serif ">
+                        <a href="./index.html"
+                            class="flow-root py-2 px-2 text-sm cursor-pointer">Home</a>
+                        <a href="./about.html"
+                            class="flow-root py-2 px-2 text-sm cursor-pointer">About</a>
+                    </div>
+
                 </div>
-
-                <!-- primary nav -->
-                <div class= "hidden md:flex items-center space-x-1">
-                    <a href="/Project-Harmony/index.html" class="py-2 px-3 cursor-pointer">Home</a>
-                    <a href="/Project-Harmony/about.html" class="py-2 px-3 cursor-pointer">About</a>
-                </div>
-
-                <!-- mobile button goes here -->
-                <div class="md:hidden flex items-center">
-                    <button class= "mobile-menu-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-pink-600" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
-                      </svg>
-                    </button>
-                </div>
-
-                <!-- mobile menu -->
-                <div class="mobile-menu hidden text-sans-serif ">
-                    <a href="/Project-Harmony/index.html" class="flow-root py-2 px-2 text-sm cursor-pointer">Home</a>
-                    <a href="/Project-Harmony/about.html" class="flow-root py-2 px-2 text-sm cursor-pointer">About</a>
-                </div>
-
-             </div>
             </div>
 
         </nav>
-    </header> 
-    <div class="container flex-wrap items-left p-4 md:text-xl sm:text-sm h-screen justify-center px-4 sm:px-6 lg:px-8 bg-bottom bg-opacity-50"
-    style="background-image: url('https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+    </header>
+    <div class = "about-section"
+    style="background-image: url('https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');"
+    >
+    <div class="container flex-wrap items-left p-4 md:text-xl sm:text-sm h-screen justify-center px-4 sm:px-6 lg:px-8 bg-bottom bg-opacity-50">
         <h2 class= "container- flex-wrap items-center m-4 p-5 text-2xl space-x-4 bg-yellow-500 rounded text-opacity-100">About Us</h2>
         <div class=" container flex items-center p-4 static">
         <p class= "container flex p-4 rounded break-normal text-indent text-bold bg-purple-300 bg-opacity-80">We are team of fullstack development students who wanted to solve a problem we face.  We wanted to create a space where we could be able to find live events regarding our favorite artists.  In this project we built a simple html page to display to the artist page incorporating a server-side api in order to display events and information to the specific artist.  We hope you enjoy!
         </p>
         </div>
     </div>
+</div>
     <script src="./assets/script.js"></script>
 </body>
 </html>

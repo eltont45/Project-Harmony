@@ -18,7 +18,7 @@ https://eltont45.github.io/Project-Harmony/
 
 ## Application Walk-through 
 * Live Events are displayed in the landing page. Tickets can be booked for the events by clicking on the "Buy Tickets" button.
-![Live Section](./assets/images/readme-live-events-section.png?raw=true "Live Section")
+![Live Section](./assets/images/readme-live-events-section.png "Live Section")
 
 * Search artists by name
 ![Search Artists by Name](./assets/images/readme-search-artists.png?raw=true "Search Artists by Name")

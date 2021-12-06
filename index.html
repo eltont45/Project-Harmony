@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
     <link href="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -18,41 +20,159 @@
 
 <body class="font-Poppins">
     <header>
-         <nav class ="container flex items-center py-4 mt-4 sm:mt-12">
-             <div class="py-1">
-                 <img src="./assets/Images/facebook_cover_photo_2.png" alt="record for Project Harmony">
-             </div>
-             <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 uppercase text-xs">
-                 <li class="cursor-pointer">Home</li>
-                 <li class="cursor-pointer">Saved Artists</li>
-                 <li class="cursor-pointer">About</li>
-             </ul>
-             <div class="flex sm:hidden flex-1 justify-end"><i class="fas fa-sliders-h"></i></diV>
-         </nav>
-    </header> 
+        <!-- Navbar goes here  -->
+        <nav class="bg-white flex-wrap">
+            <div class="max-w-6xl mx auto pr-3">
+                <div class="flex justify-between space-x-4">
 
-        <div class=" bg-gray-200">
-            <div class="container h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8">
-                <div class="relative"> <input type="text" class="h-14 w-96 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none" placeholder="Search an artist">
-                    <div class="absolute top-4 right-3"> <i class="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i> </div>
+                    <!-- logo -->
+                    <div class="flex pl-6">
+                        <img src="./assets/Images/facebook_cover_photo_3.png" alt="record for Project Harmony">
+                    </div>
+
+                    <!-- primary nav -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="./index.html" class="py-2 px-3 cursor-pointer">Home</a>
+                        <a href="./about.html" class="py-2 px-3 cursor-pointer">About</a>
+                    </div>
+
+                    <!-- mobile button goes here -->
+                    <div class="md:hidden flex items-center">
+                        <button class="mobile-menu-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-pink-600" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- mobile menu -->
+                    <div class="mobile-menu hidden text-sans-serif ">
+                        <a href="./index.html"
+                            class="flow-root py-2 px-2 text-sm cursor-pointer">Home</a>
+                        <a href="./about.html"
+                            class="flow-root py-2 px-2 text-sm cursor-pointer">About</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <div class="flex flex-wrap hero-section justify-center"
+        style="background-image: url('https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=1000');">
+        <div class="flex flex-wrap align-middle mt-16 z-10">
+            <div class="flex absolute search-artist-section justify-end"> <input type="text"
+                    class="h-14 w-96 pr-8 pl-5 rounded z-0 focus:shadow focus:outline-none search-artist"
+                    placeholder="Search an artist">
+                <div class="flex absolute top-0 right-3 justify-end py-1 px-2 search-btn"> <i
+                        class="fa fa-search text-black-400 z-20 hover:text-gray-500 search-btn"></i>
                 </div>
             </div>
         </div>
-    
+        <div
+            class="container h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8 bg-bottom opacity-75 mt-16 w-full bg-image">
 
-
-
-
-
-
-
-
-
+            <div class="flex absolute align-baseline float-bottom live-events-section">
+                <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-5">
+                    <!--Card 1-->
+                    <div class=" w-full lg:max-w-full lg:flex">
+                        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden wt-8 card-1-image"
+                            style="background-image: url('./assets/images/concert.png')">
+                        </div>
+                        <div
+                            class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                            <div class="mb-8">
+                                <div class="text-gray-900 font-bold text-xl mb-2 card-1-header"></div>
+                                <p class="text-gray-700 font-bold text-base card1-p1">
+                                </p>
+                                <p class="text-gray-700 font-bold text-base card1-p2">
+                                </p>
+                                <p class="text-gray-700 font-bold text-base card1-p3">
+                                </p>
+                                <p class="text-gray-700 font-bold text-base card1-p4">
+                                </p>
+                            </div>
+                            <div class="flex items-center">
+                                <button
+                                    class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded card-1-button"
+                                    formtarget="_blank">
+                                    Buy Tickets
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Card 2-->
+                    <div class="w-full lg:max-w-full lg:flex">
+                        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+                            style="background-image: url('./assets/images/concert.png')">
+                        </div>
+                        <div
+                            class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                            <div class="mb-8">
+                                <div class="text-gray-900 font-bold text-xl mb-2 card-2-header"></div>
+                                <p class="text-gray-700 font-bold text-base card2-p1">
+                                </p>
+                                <p class="text-gray-700 font-bold text-base card2-p2">
+                                </p>
+                                <p class="text-gray-700 font-bold text-base card2-p3">
+                                </p>
+                                <p class="text-gray-700 font-bold text-base card2-p4">
+                                </p>
+                            </div>
+                            <div class="flex items-center">
+                                <button
+                                    class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded card-2-button"
+                                    formtarget="_blank">
+                                    Buy Tickets
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Card 3-->
+                    <div class="w-full lg:max-w-full lg:flex">
+                        <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+                            style="background-image: url('./assets/images/concert.png')">
+                        </div>
+                        <div
+                            class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                            <div class="mb-8">
+                                <div class="text-gray-900 font-bold text-xl mb-2 card-3-header"></div>
+                                <p class="text-gray-700 font-bold text-base card3-p1">
+                                </p>
+                                <p class="text-gray-700 font-bold text-base card3-p2">
+                                </p>
+                                <p class="text-gray-700 font-bold text-base card3-p3">
+                                </p>
+                                <p class="text-gray-700 font-bold text-base card3-p4">
+                                </p>
+                            </div>
+                            <div class="flex items-center">
+                                <button
+                                    class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded card-3-button"
+                                    formtarget="_blank">
+                                    Buy Tickets
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="discography-section"></div>
     <div class="footer">
-        <h2><footer> with ❤️️ by EDT</footer></h2>
+        <h2>
+            <footer> with ❤️️ by EDT</footer>
+        </h2>
         <p>
             &copy; 2021 Project Harmony
         </p>
     </div>
+    <script src="./assets/script.js"></script>
 </body>
+
 </html>
